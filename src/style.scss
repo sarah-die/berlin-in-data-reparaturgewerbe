@@ -1,0 +1,18 @@
+// don´t change the order!
+
+// new global color-vars
+@import "./src/styles/global-vars";
+
+// bulma imports
+@import "../node_modules/bulma/sass/utilities/all.sass";
+@import "../node_modules/bulma/sass/utilities/initial-variables.sass";
+@import "../node_modules/bulma/bulma.sass";
+
+// add new stylesheets of components here
+@import "./src/styles/main";
+@import "./src/styles/layout";
+
+// style imports from libraries
+// using cdn instead of import because not all css classes are loaded properly by nextjs
+//@import "../node_modules/swiper/swiper-bundle.css";
+//@import "https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.css";
