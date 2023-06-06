@@ -1,5 +1,4 @@
 import Head from "next/head";
-// import styles from '../styles/_layout.scss'
 import Link from "next/link";
 
 export const siteTitle = "Next.js Sample Website";
