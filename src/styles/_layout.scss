@@ -1,19 +1,17 @@
-@import "./src/styles/global-vars";
+//@import "./src/styles/global-vars";
+
+@use "./src/styles/global-vars" as var;
 
 .layout {
-  .container {
-    max-width: 36rem;
-    padding: 0 1rem;
-    margin: 3rem auto 6rem;
-  }
-
-  .header {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  .mainLayoutContainer {
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 100vh;
+    width: 100%;
   }
 
   .backToHome {
-    margin: 3rem 0 0;
+    padding: 1rem;
   }
 }
+

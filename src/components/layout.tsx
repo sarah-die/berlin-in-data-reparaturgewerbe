@@ -1,8 +1,7 @@
-import Head from 'next/head'
+import Head from "next/head";
 // import styles from '../styles/_layout.scss'
-import Link from 'next/link'
+import Link from "next/link";
 
-const name = "[Your Name]";
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({
@@ -31,33 +30,18 @@ export default function Layout({
         {/*Bulma requires this*/}
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      <header
-          // ToDo
-          className="header"
-      >
-        {home ? (
-          <>
-            <h1>{name}</h1>
-          </>
-        ) : (
-          <>
-            <Link href="/">
-            </Link>
-            <h2 >
-              <Link href="/">
-                {name}
-              </Link>
-            </h2>
-          </>
-        )}
+      <header className="header">
+        {/*<NavBar />*/}
+        <h1>titel</h1>
       </header>
-      <main>{children}</main>
+      <main className="mainLayoutContainer" id="Outlet">
+        {children}
+      </main>
       {!home && (
-        <div
-            // ToDo
-            className="backToHome"
-        >
-          <Link href="/">← Back to home</Link>
+        <div className="backToHome">
+          <Link href="/">
+            ← Back to home
+          </Link>
         </div>
       )}
     </div>
