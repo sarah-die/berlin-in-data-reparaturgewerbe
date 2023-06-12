@@ -11,9 +11,9 @@ export default function Home() {
       <main>
         <section className="section">
           <div className="container">
-            <h1 className="title">Hello World</h1>
+            <h1 className="title">Berlin (Charlottenburg) in Data - Reparaturgewerbe</h1>
             <p className="subtitle">
-              My first website 2 with <strong>Bulma</strong>!
+              Fetching data from berlin.de and using chart.js to display them.
             </p>
             <button
               className={clsx("button", buttonSize ? "is-small" : "is-large")}

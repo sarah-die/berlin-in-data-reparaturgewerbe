@@ -31,7 +31,7 @@ export default function Layout({
       </Head>
       <header className="header">
         {/*<NavBar />*/}
-        <h1>titel</h1>
+        <h1>Data</h1>
       </header>
       <main className="mainLayoutContainer" id="Outlet">
         {children}
