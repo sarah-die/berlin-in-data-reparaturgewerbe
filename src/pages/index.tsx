@@ -1,28 +1,22 @@
-import { useState } from "react";
-import clsx from "clsx";
 import Layout from "../components/layout";
 import Link from "next/link";
 
 export default function Home() {
-  const [buttonSize, setButtonSize] = useState<boolean>(true);
-
   return (
     <Layout home>
       <main>
         <section className="section">
           <div className="container">
-            <h1 className="title">Berlin (Charlottenburg) in Data - Reparaturgewerbe</h1>
+            <h1 className="title">
+              Berlin (Charlottenburg) in Data - Reparaturgewerbe
+            </h1>
             <p className="subtitle">
               Fetching data from berlin.de and using chart.js to display them.
             </p>
-            <button
-              className={clsx("button", buttonSize ? "is-small" : "is-large")}
-              onClick={() => {
-                setButtonSize(!buttonSize);
-              }}
-            >
-              Button
-            </button>
+            <div className="text-container">
+              The main purpose from this web-project is getting practice with
+              fetching and displaying data. To do so I'm using chartJS react.
+            </div>
             <h2>
               <Link href="/testCharts">View some test charts</Link>
             </h2>

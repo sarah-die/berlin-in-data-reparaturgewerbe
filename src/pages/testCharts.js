@@ -35,11 +35,17 @@ export default function TestCharts() {
       <section className="section">
         <div className="container">
           <h1 className="title">Hello!</h1>
-          <h1>
+          <div className="text-container">
             Here are some basic charts displayed. The data used are just mock
             data. This pages purpose is to get the right css-settings. Focus was
             on making the charts responsive.
-          </h1>
+          </div>
+          <div className="text-container">
+            Note to myself: Chart.js uses its parent container to update the
+            canvas render and display sizes. For that "position: relative" is
+            necessary. "MaintainAspectRatio: false" to not automatically
+            calculate the height of charts.
+          </div>
           <div className="chart-container">
             <BarChart chartData={userData} />
           </div>
