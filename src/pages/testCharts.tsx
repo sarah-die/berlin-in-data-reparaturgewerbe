@@ -9,7 +9,7 @@ import PieChart from "../components/PieChart";
 export default function TestCharts() {
   // chart js requires an object that looks like the initialState
   const [userData, setUserData] = useState({
-    labels: UserData.map((data) => data.year),
+    labels: UserData.map((data: Userdata) => data.year),
     datasets: [
       {
         label: "Users Gained",
