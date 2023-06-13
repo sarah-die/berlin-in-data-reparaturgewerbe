@@ -7,20 +7,32 @@ html {
   box-sizing: border-box;
 }
 
-//main {
-//  margin: 0 auto 0 0;
-//}
+main {
+  margin: 0 auto 0 0;
+}
 
-// Section Class
 .section {
-  display: flex;
-  padding: 6rem 1.5rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto; // center container
+  //border: 2px solid burlywood;
   @include tablet {
-    padding: 6rem clamp(6rem, 8.333333%, 8.333333%);
+    padding: 3rem;
   }
-  @include desktop {
-    padding: 6rem clamp(8rem, 8.333333%, 8.333333%);
+  @include mobile {
+    padding: 1rem;
   }
+}
+
+// main container for chart-elements
+// Note: Chart.js uses its parent container to update the canvas render and display sizes.
+// position: relative is necessary
+.chart-container {
+  position: relative;
+  margin: auto;
+  height: 30vh;
+  width: 80vw;
+  max-width: 1000px;
 }
 
 // main container for text-elements

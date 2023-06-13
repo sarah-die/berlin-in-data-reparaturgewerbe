@@ -5,5 +5,11 @@ ChartJS.register(CategoryScale);
 
 export default function BarChart({ chartData }) {
   // options={} is optional
-  return <Bar data={chartData} />;
+  // true is the defautl value for maintainAspectRatio and responsive
+  return (
+    <Bar
+      data={chartData}
+      options={{ maintainAspectRatio: false, responsive: true }}
+    />
+  );
 }

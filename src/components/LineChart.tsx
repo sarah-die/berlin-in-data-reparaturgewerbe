@@ -4,6 +4,6 @@ import { CategoryScale } from "chart.js";
 ChartJS.register(CategoryScale);
 
 export default function LineChart({ chartData }) {
-    // options={} is optional
-    return <Line data={chartData} />;
+  // options={} is optional
+  return <Line data={chartData} options={{ maintainAspectRatio: false }} />;
 }

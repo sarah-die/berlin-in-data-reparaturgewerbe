@@ -6,7 +6,7 @@ import { UserData } from "../data/testData";
 import LineChart from "../components/LineChart";
 import PieChart from "../components/PieChart";
 
-export default function AnotherPage() {
+export default function TestCharts() {
   // chart js requires an object that looks like the initialState
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.year),
@@ -30,19 +30,23 @@ export default function AnotherPage() {
   return (
     <Layout>
       <Head>
-        <title>Another Page</title>
+        <title>Test Charts</title>
       </Head>
       <section className="section">
         <div className="container">
           <h1 className="title">Hello!</h1>
-          <h1>Here are some basic charts displayed. The data used are just mock data.</h1>
-          <div style={{ width: 700 }}>
+          <h1>
+            Here are some basic charts displayed. The data used are just mock
+            data. This pages purpose is to get the right css-settings. Focus was
+            on making the charts responsive.
+          </h1>
+          <div className="chart-container">
             <BarChart chartData={userData} />
           </div>
-          <div style={{ width: 700 }}>
+          <div className="chart-container">
             <LineChart chartData={userData} />
           </div>
-          <div style={{ width: 700 }}>
+          <div className="chart-container">
             <PieChart chartData={userData} />
           </div>
         </div>

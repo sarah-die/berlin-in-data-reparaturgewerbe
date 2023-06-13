@@ -24,7 +24,7 @@ export default function Home() {
               Button
             </button>
             <h2>
-              <Link href="/anotherPage">To another Page</Link>
+              <Link href="/testCharts">View some test charts</Link>
             </h2>
           </div>
         </section>

@@ -4,6 +4,6 @@ import { CategoryScale } from "chart.js";
 ChartJS.register(CategoryScale);
 
 export default function PieChart({ chartData }) {
-    // options={} is optional
-    return <Pie data={chartData} />;
+  // options={} is optional
+  return <Pie data={chartData} options={{ maintainAspectRatio: false }} />;
 }
