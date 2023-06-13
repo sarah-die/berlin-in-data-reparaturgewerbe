@@ -37,7 +37,7 @@ export default function TestCharts() {
           <h1 className="title">Hello!</h1>
           <div className="text-container">
             Here are some basic charts displayed. The data used are just mock
-            data. This pages purpose is to get the right css-settings. Focus was
+            data. This pages purpose is to get the right css-settings and chart-options. Focus was
             on making the charts responsive.
           </div>
           <div className="text-container">
