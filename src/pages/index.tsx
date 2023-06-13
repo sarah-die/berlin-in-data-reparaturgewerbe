@@ -20,6 +20,11 @@ export default function Home() {
             <h2>
               <Link href="/testCharts">View some test charts</Link>
             </h2>
+            <h2>
+              <Link href="/repairShopCharts">
+                View some charts about repair shops in Berlin
+              </Link>
+            </h2>
           </div>
         </section>
       </main>
