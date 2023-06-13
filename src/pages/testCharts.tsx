@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 import Head from "next/head";
 import BarChart from "../components/BarChart";
 import { useState } from "react";
-import { Userdata, UserData } from "../data/testData";
+import { Userdata, UserData } from "@/data/testData";
 import LineChart from "../components/LineChart";
 import PieChart from "../components/PieChart";
 
