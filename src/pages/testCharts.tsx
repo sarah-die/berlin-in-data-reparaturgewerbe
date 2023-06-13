@@ -2,7 +2,7 @@ import Layout from "../components/layout";
 import Head from "next/head";
 import BarChart from "../components/BarChart";
 import { useState } from "react";
-import { UserData } from "../data/testData";
+import { Userdata, UserData } from "../data/testData";
 import LineChart from "../components/LineChart";
 import PieChart from "../components/PieChart";
 
@@ -13,7 +13,7 @@ export default function TestCharts() {
     datasets: [
       {
         label: "Users Gained",
-        data: UserData.map((data) => data.userGain),
+        data: UserData.map((data: Userdata) => data.userGain),
         backgroundColor: [
           "rgba(75,192,192,1)",
           "#ecf0f1",
@@ -37,8 +37,8 @@ export default function TestCharts() {
           <h1 className="title">Hello!</h1>
           <div className="text-container">
             Here are some basic charts displayed. The data used are just mock
-            data. This pages purpose is to get the right css-settings and chart-options. Focus was
-            on making the charts responsive.
+            data. This pages purpose is to get the right css-settings and
+            chart-options. Focus was on making the charts responsive.
           </div>
           <div className="text-container">
             Note to myself: Chart.js uses its parent container to update the

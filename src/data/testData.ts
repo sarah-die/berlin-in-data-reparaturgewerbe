@@ -1,4 +1,11 @@
-export const UserData = [
+export type Userdata = {
+  id: number;
+  year: number;
+  userGain: number;
+  userLost: number;
+};
+
+export const UserData: Userdata[] = [
   {
     id: 1,
     year: 2016,
