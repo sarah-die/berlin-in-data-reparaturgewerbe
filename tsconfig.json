@@ -23,6 +23,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "../../.local/share/JetBrains/Toolbox/apps/WebStorm/ch-0/223.8214.51/plugins/javascript-impl/jsLanguageServicesImpl/external/lib.es5.d.ts"
+  ],
   "exclude": ["node_modules"]
 }
