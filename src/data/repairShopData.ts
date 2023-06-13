@@ -15,8 +15,11 @@ export type Shop = {
   internet: string;
 };
 
-async function FetchShopData() {
+export const getRepairshopData = async () => {
   const response = await fetch(url);
-  const shopData: Shop[] = (await response.json()).index;
-  return shopData;
-}
+  if (!response.ok) {
+    throw new Error("Cannot fetch the data.");
+  }
+  const data: Shop[] = (await response.json()).index;
+  return data;
+};
