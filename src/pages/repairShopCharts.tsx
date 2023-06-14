@@ -2,8 +2,8 @@ import Layout from "@/components/layout";
 import Head from "next/head";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
 import { useEffect, useMemo, useState } from "react";
-import BarChart from "@/components/BarChart";
-import PieChart from "@/components/PieChart";
+import BarChart from "@/components/basicCharts/BarChart";
+import PieChart from "@/components/basicCharts/PieChart";
 
 /** This component renders charts that display the different sectors that offer the option to repair things. */
 

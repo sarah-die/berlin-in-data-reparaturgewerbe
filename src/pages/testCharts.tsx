@@ -1,10 +1,10 @@
 import Layout from "../components/layout";
 import Head from "next/head";
-import BarChart from "../components/BarChart";
+import BarChart from "../components/basicCharts/BarChart";
 import { useState } from "react";
 import { Userdata, UserData } from "@/data/testData";
-import LineChart from "../components/LineChart";
-import PieChart from "../components/PieChart";
+import LineChart from "../components/basicCharts/LineChart";
+import PieChart from "../components/basicCharts/PieChart";
 
 export default function TestCharts() {
   // chart js requires an object that looks like the initialState
@@ -47,13 +47,13 @@ export default function TestCharts() {
             calculate the height of charts.
           </div>
           <div className="chart-container">
-            <BarChart chartData={userData} />
+            <BarChart chartData={userData} title={"basic bar chart"} />
           </div>
           <div className="chart-container">
             <LineChart chartData={userData} />
           </div>
           <div className="chart-container">
-            <PieChart chartData={userData} />
+            <PieChart chartData={userData} title={"basic bar chart"} />
           </div>
         </div>
       </section>
