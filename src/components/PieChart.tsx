@@ -5,13 +5,14 @@ import autocolors from "chartjs-plugin-autocolors";
 ChartJS.register(CategoryScale, autocolors);
 
 export default function PieChart(props: { chartData; title: string }) {
+  // https://codesandbox.io/s/react-playground-forked-xzm0sx?file=/index.js
   const options: any = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
-      autocolors: {
-        mode: "label",
-      },
+      // autocolors: {
+      //   mode: "data",
+      // },
       legend: {
         display: true,
         align: "center",
@@ -30,5 +31,8 @@ export default function PieChart(props: { chartData; title: string }) {
     },
   };
 
-  return <Pie data={props.chartData} options={options} />;
+  return <Pie
+      data={props.chartData}
+      // plugins={autocolors}
+      options={options} />;
 }

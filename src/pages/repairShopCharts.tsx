@@ -51,14 +51,30 @@ export default function RepairShopCharts() {
     return biggestSectors;
   }, [repairShopData]);
 
+  function getRandomColor(count) {
+    let colors = [];
+    for (var i = 0; i < count; i++) {
+      let letters = "0123456789ABCDEF".split("");
+      let color = "#";
+      for (let x = 0; x < 6; x++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      colors.push(color);
+    }
+    return colors;
+  }
+
   // process the data the way they are needed to be displayed in the charts
   const chartData = useMemo(
     () => ({
       labels: numberOfBranchen.map((data: BranchenType) => data.branche),
+      // datasets is an array of objects where each object represents a set of data
+      // to display corresponding to the labels above
       datasets: [
         {
           label: "Branchen",
           data: numberOfBranchen.map((data: BranchenType) => data.numb),
+          backgroundColor: getRandomColor(10),
           // backgroundColor: [
           //   "rgba(75,192,192,1)",
           //   "#ecf0f1",
@@ -66,8 +82,8 @@ export default function RepairShopCharts() {
           //   "#f3ba2f",
           //   "#2a71d0",
           // ],
-          // borderColor: "black",
-          // borderWidth: 0.5,
+          borderColor: "black",
+          borderWidth: 0.5,
         },
       ],
     }),
