@@ -6,9 +6,12 @@ import BarChart from "@/components/BarChart";
 import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
 
+/** This component renders charts that display the different sectors that offer the option to repair things. */
+
 type BranchenType = { branche: string; numb: number };
 
 export default function RepairShopCharts() {
+  // get raw data from the API
   const [repairShopData, setRepairShopData] = useState<Shop[]>([]);
   useEffect(() => {
     const fetch = async () => {
@@ -22,6 +25,7 @@ export default function RepairShopCharts() {
     fetch();
   }, []);
 
+  // process the data according to the requirement that only the different sectors are still present
   const numberOfBranchen = useMemo(() => {
     const branchen: string[] = repairShopData.map((shop) => shop.branche);
 
@@ -29,16 +33,17 @@ export default function RepairShopCharts() {
     branchen.forEach((br) => {
       const index: number = temp.findIndex((el) => el.branche === br);
       if (index === -1) {
-        // branche does not exist
+        // sector does not exist
         temp.push({ branche: br, numb: 1 });
       } else {
-        // branche does already exist
+        // sector does already exist
         temp[index].numb++;
       }
     });
     return temp;
   }, [repairShopData]);
 
+  // process the data the way they are needed to be displayed in the charts
   const chartData = useMemo(
     () => ({
       labels: numberOfBranchen.map((data: BranchenType) => data.branche),
