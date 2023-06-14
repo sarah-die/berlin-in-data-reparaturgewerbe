@@ -3,7 +3,6 @@ import Head from "next/head";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
 import { useEffect, useMemo, useState } from "react";
 import BarChart from "@/components/BarChart";
-import LineChart from "@/components/LineChart";
 import PieChart from "@/components/PieChart";
 
 /** This component renders charts that display the different sectors that offer the option to repair things. */
@@ -60,15 +59,15 @@ export default function RepairShopCharts() {
         {
           label: "Branchen",
           data: numberOfBranchen.map((data: BranchenType) => data.numb),
-          backgroundColor: [
-            "rgba(75,192,192,1)",
-            "#ecf0f1",
-            "#50AF95",
-            "#f3ba2f",
-            "#2a71d0",
-          ],
-          borderColor: "black",
-          borderWidth: 1,
+          // backgroundColor: [
+          //   "rgba(75,192,192,1)",
+          //   "#ecf0f1",
+          //   "#50AF95",
+          //   "#f3ba2f",
+          //   "#2a71d0",
+          // ],
+          // borderColor: "black",
+          // borderWidth: 0.5,
         },
       ],
     }),
@@ -90,10 +89,16 @@ export default function RepairShopCharts() {
             Verfügung gestellt.
           </div>
           <div className="chart-container">
-            <BarChart chartData={chartData} />
+            <BarChart
+              chartData={chartData}
+              title={"Reparaturgewerbe nach Branchen"}
+            />
           </div>
           <div className="chart-container">
-            <PieChart chartData={chartData} />
+            <PieChart
+              chartData={chartData}
+              title={"Reparaturgewerbe nach Branchen"}
+            />
           </div>
         </div>
       </section>
