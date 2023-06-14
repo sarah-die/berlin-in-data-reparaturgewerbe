@@ -21,12 +21,13 @@ export default function PieChart(props: { chartData; title: string }) {
           usePointStyle: true,
           boxHeight: 8,
           fontColor: "#323130",
-          fontSize: 14,
+          fontSize: 40, // ToDo
         },
       },
       title: {
         display: true,
         text: props.title,
+        fontSize: 30, // ToDo
       },
     },
   };
