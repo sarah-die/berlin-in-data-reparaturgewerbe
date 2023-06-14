@@ -36,6 +36,7 @@ export default function FaxPieChart() {
           hasAndHasNot[0].numb++;
         }
       });
+      // ToDo: (given/possible) * 100 = percent
       return hasAndHasNot;
     }, [repairShopData]);
 
