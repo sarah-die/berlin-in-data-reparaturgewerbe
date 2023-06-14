@@ -26,7 +26,7 @@ export default function RepairShopCharts() {
   }, []);
 
   // process the data according to the requirement that only the different sectors are still present
-  const numberOfBranchen = useMemo(() => {
+  const numberOfBranchen: BranchenType[] = useMemo(() => {
     const branchen: string[] = repairShopData.map((shop) => shop.branche);
 
     const temp: BranchenType[] = [];
@@ -40,7 +40,16 @@ export default function RepairShopCharts() {
         temp[index].numb++;
       }
     });
-    return temp;
+    temp.sort((a, b) => {
+      return b.numb - a.numb;
+    });
+    const others: number = temp
+      .slice(12)
+      .reduce((acc, cur) => acc + cur.numb, 0);
+    const biggestSectors: BranchenType[] = temp.slice(0, 12);
+    biggestSectors.push({ branche: "Sonstige", numb: others });
+
+    return biggestSectors;
   }, [repairShopData]);
 
   // process the data the way they are needed to be displayed in the charts
@@ -69,21 +78,19 @@ export default function RepairShopCharts() {
   return (
     <Layout>
       <Head>
-        <title>Repair Shops</title>
+        <title>Reparaturgewerbe nach Branchen</title>
       </Head>
       <section className="section">
         <div className="container">
           <h1 className="title">
-            Some charts about repair shops in Berlin-Charlottenburg
+            Branchenverteilung von Reparaturshops in Berlin-Charlottenburg.
           </h1>
           <div className="text-container">
-            The data on which the graphs are based are provided by berlin.de.
+            Die Daten, auf denen die Grafiken basieren, werden von berlin.de zur
+            Verfügung gestellt.
           </div>
           <div className="chart-container">
             <BarChart chartData={chartData} />
-          </div>
-          <div className="chart-container">
-            <LineChart chartData={chartData} />
           </div>
           <div className="chart-container">
             <PieChart chartData={chartData} />
