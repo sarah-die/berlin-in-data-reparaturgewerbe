@@ -7,8 +7,9 @@ import PieChart from "@/components/basicCharts/PieChart";
 type BranchenType = { branche: string; numb: number };
 
 export default function SectorPieChart() {
-  // get raw data from the API
   const [repairShopData, setRepairShopData] = useState<Shop[]>([]);
+
+  // get raw data from the API
   useEffect(() => {
     const fetch = async () => {
       try {
@@ -48,18 +49,21 @@ export default function SectorPieChart() {
     return biggestSectors;
   }, [repairShopData]);
 
-  function getRandomColor(count) {
-    let colors = [];
-    for (var i = 0; i < count; i++) {
-      let letters = "0123456789ABCDEF".split("");
-      let color = "#";
-      for (let x = 0; x < 6; x++) {
-        color += letters[Math.floor(Math.random() * 16)];
+  const colors: string[] = useMemo(() => {
+    function getRandomColor(count) {
+      let colors = [];
+      for (let i = 0; i < count; i++) {
+        let letters = "0123456789ABCDEF".split("");
+        let color = "#";
+        for (let x = 0; x < 6; x++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        colors.push(color);
       }
-      colors.push(color);
+      return colors;
     }
-    return colors;
-  }
+    return getRandomColor(numberOfBranchen.length);
+  }, [numberOfBranchen]);
 
   // process the data the way they are needed to be displayed in the charts
   const chartData = useMemo(
@@ -71,7 +75,7 @@ export default function SectorPieChart() {
         {
           label: "Branchen",
           data: numberOfBranchen.map((data: BranchenType) => data.numb),
-          backgroundColor: getRandomColor(10),
+          backgroundColor: colors,
           borderColor: "black",
           borderWidth: 0.5,
         },
