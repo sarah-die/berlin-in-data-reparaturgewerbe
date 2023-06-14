@@ -73,7 +73,7 @@ export default function SectorPieChart() {
       // to display corresponding to the labels above
       datasets: [
         {
-          label: "Branchen",
+          label: "Anzahl Shops",
           data: numberOfBranchen.map((data: BranchenType) => data.numb),
           backgroundColor: colors,
           borderColor: "black",

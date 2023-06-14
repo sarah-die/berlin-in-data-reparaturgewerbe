@@ -1,6 +1,7 @@
 import Layout from "@/components/layout";
 import Head from "next/head";
 import SectorPieChart from "@/components/specificComponents/SectorPieChart";
+import FaxPieChart from "@/components/specificComponents/FaxPieChart";
 
 /** This page renders charts that display different information about repairshops in Berlin. */
 
@@ -20,6 +21,7 @@ export default function RepairShopCharts() {
             Verfügung gestellt.
           </div>
           <SectorPieChart />
+          <FaxPieChart />
         </div>
       </section>
     </Layout>
