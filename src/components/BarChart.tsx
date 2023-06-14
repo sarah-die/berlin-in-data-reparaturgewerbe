@@ -1,15 +1,28 @@
 import { Bar } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-ChartJS.register(CategoryScale);
+import autocolors from "chartjs-plugin-autocolors";
+ChartJS.register(CategoryScale, autocolors);
 
-export default function BarChart({ chartData }) {
+export default function BarChart(props: { chartData: any; title: string }) {
+  const options: any = {
+    responsive: true,
+    maintainAspectRatio: false,
+    plugins: {
+      autocolors: {
+        mode: "data",
+      },
+      legend: {
+        display: false,
+      },
+      title: {
+        display: true,
+        text: props.title,
+      },
+    },
+  };
+
   // options={} is optional
   // true is the defautl value for maintainAspectRatio and responsive
-  return (
-    <Bar
-      data={chartData}
-      options={{ maintainAspectRatio: false, responsive: true }}
-    />
-  );
+  return <Bar data={props.chartData} options={options} />;
 }
