@@ -5,6 +5,7 @@ import { useState } from "react";
 import { Userdata, UserData } from "@/data/testData";
 import LineChart from "../components/basicCharts/LineChart";
 import PieChart from "../components/basicCharts/PieChart";
+import ChartWithCustomLegend from "@/components/basicCharts/ChartWithCustomLegend";
 
 export default function TestCharts() {
   // chart js requires an object that looks like the initialState
@@ -54,6 +55,12 @@ export default function TestCharts() {
           </div>
           <div className="chart-container">
             <PieChart chartData={userData} title={"basic bar chart"} />
+          </div>
+          <div className="chart-container">
+            <ChartWithCustomLegend
+              chartData={userData}
+              title={"This is the titel"}
+            />
           </div>
         </div>
       </section>
