@@ -26,24 +26,24 @@ export default function SectorPieChart() {
   const numberOfBranchen: BranchenType[] = useMemo(() => {
     const branchen: string[] = repairShopData.map((shop) => shop.branche);
 
-    const temp: BranchenType[] = [];
+    const allSectors: BranchenType[] = [];
     branchen.forEach((br) => {
-      const index: number = temp.findIndex((el) => el.branche === br);
+      const index: number = allSectors.findIndex((el) => el.branche === br);
       if (index === -1) {
         // sector does not exist
-        temp.push({ branche: br, numb: 1 });
+        allSectors.push({ branche: br, numb: 1 });
       } else {
         // sector does already exist
-        temp[index].numb++;
+        allSectors[index].numb++;
       }
     });
-    temp.sort((a, b) => {
+    allSectors.sort((a, b) => {
       return b.numb - a.numb;
     });
-    const others: number = temp
+    const others: number = allSectors
       .slice(12)
       .reduce((acc, cur) => acc + cur.numb, 0);
-    const biggestSectors: BranchenType[] = temp.slice(0, 12);
+    const biggestSectors: BranchenType[] = allSectors.slice(0, 12);
     biggestSectors.push({ branche: "Sonstige", numb: others });
 
     return biggestSectors;
