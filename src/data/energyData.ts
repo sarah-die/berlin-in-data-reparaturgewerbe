@@ -59,13 +59,14 @@ export type Country = {
   data: EnergyData[];
 };
 
-// Todo: statt Germany eingegebenes Land also: )).countryVar
-// die countryVar dann getEnergyData übergeben
-export const getEnergyData = async () => {
+// variable country to only get data from one country at a time
+// square brackets are used here to enclose the variables name
+// which is then evaluated at runtime to get the actual key name
+export const getEnergyData = async (country: string) => {
   const response = await fetch(energyUrl);
   if (!response.ok) {
     throw new Error("Cannot fetch the data.");
   }
-  const data: Country = (await response.json()).Germany;
+  const data: Country = (await response.json())[country];
   return data;
 };
