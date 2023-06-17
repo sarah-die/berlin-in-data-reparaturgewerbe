@@ -6,10 +6,11 @@ import { Userdata, UserData } from "@/data/testData";
 import LineChart from "../components/basicCharts/LineChart";
 import PieChart from "../components/basicCharts/PieChart";
 import ChartWithCustomLegend from "@/components/basicCharts/ChartWithCustomLegend";
+import { ChartData } from "chart.js";
 
 export default function TestCharts() {
   // chart js requires an object that looks like the initialState
-  const [userData, setUserData] = useState({
+  const [userData, setUserData] = useState<ChartData<"pie">>({
     labels: UserData.map((data: Userdata) => data.year),
     datasets: [
       {

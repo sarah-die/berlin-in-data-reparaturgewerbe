@@ -1,19 +1,29 @@
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+import { ChartProps, Pie } from "react-chartjs-2";
+import {
+  Chart as ChartJS,
+  ChartOptions,
+} from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import autocolors from "chartjs-plugin-autocolors";
+import { useEffect, useRef, useState } from "react";
+
 ChartJS.register(CategoryScale, autocolors);
 
+type PieChartProps = ChartProps<"pie">;
 export default function ChartWithCustomLegend(props: {
-  chartData;
+  chartData: PieChartProps["data"];
   title: string;
 }) {
-  const plugintest: any = {
-
-  };
+  const pieRef = useRef();
+  const [legendItems, setLegendItems] = useState<
+    {
+      text: string | number;
+      fillStyle: string;
+    }[]
+  >([]);
 
   // https://codesandbox.io/s/react-playground-forked-xzm0sx?file=/index.js -> autocolor
-  const options: any = {
+  const options: ChartOptions<"pie"> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -21,8 +31,7 @@ export default function ChartWithCustomLegend(props: {
       //   mode: "data",
       // },
       legend: {
-        display: true,
-        align: "center",
+        display: false,
       },
       title: {
         display: true,
@@ -32,14 +41,21 @@ export default function ChartWithCustomLegend(props: {
     },
   };
 
+  useEffect(() => {
+    const refLegendItems = (pieRef.current as any)?.legend.legendItems || [];
+    setLegendItems(refLegendItems);
+  }, [props.chartData, pieRef.current]);
+
+  console.log(legendItems);
+
   return (
     <>
       <Pie
-        data={props.chartData}
+        data={props.chartData as any}
         // plugins={autocolors}
         options={options}
+        ref={pieRef}
       />
-      <div id="js-legend"></div>
     </>
   );
 }

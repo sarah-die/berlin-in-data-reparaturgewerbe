@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
 import PieChart from "@/components/basicCharts/PieChart";
+import { ChartData } from "chart.js";
 
 /** This component renders a chart that display the amount of shops that are available via fax. */
 
@@ -41,7 +42,7 @@ export default function FaxPieChart() {
     }, [repairShopData]);
 
   // process the data the way they are needed to be displayed in the charts
-  const chartData = useMemo(
+  const chartData = useMemo<ChartData<"pie">>(
     () => ({
       labels: numberOfFaxgeraete.map((data) => data.condition),
       datasets: [
