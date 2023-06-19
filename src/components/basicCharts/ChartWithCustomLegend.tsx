@@ -56,7 +56,7 @@ export default function ChartWithCustomLegend(props: {
           ref={pieRef}
         />
       </div>
-      <BasicLegend legendItems={legendItems} />
+      <BasicLegend legendItems={legendItems} legendTitle={"Some test title"} />
     </>
   );
 }
