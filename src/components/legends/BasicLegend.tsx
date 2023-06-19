@@ -10,11 +10,11 @@ export default function BasicLegend(props: {
     <div className="basic-legend">
       <div className="legend-title">The title fooo</div>
       <div className="legend-scale">
-        <ul className="legend-labels">
+        <ul>
           {props.legendItems.map((item, index) => (
-            <li key={index} className="legend-item">
-              <span style={{ backgroundColor: item.fillStyle }}></span>
-              <span>{item.text}</span>
+            <li key={index}>
+              <div className="legend-item-color" style={{ backgroundColor: item.fillStyle }}></div>
+              <div className="legend-item-text">{item.text}</div>
             </li>
           ))}
         </ul>
