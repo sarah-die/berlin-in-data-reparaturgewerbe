@@ -33,9 +33,7 @@ export default function PieChartWithCustomLegend(props: {
         display: false,
       },
       title: {
-        display: true,
-        text: props.title,
-        fontSize: 30, // ToDo
+        display: false,
       },
     },
   };
