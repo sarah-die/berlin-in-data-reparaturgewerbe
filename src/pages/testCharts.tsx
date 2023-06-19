@@ -60,12 +60,19 @@ export default function TestCharts() {
             <LineChart chartData={chartData} />
           </div>
           <div className="chart-container">
-            <PieChart chartData={chartData} title={"basic bar chart"} />
+            <PieChart chartData={chartData} title={"basic pie chart"} />
+          </div>
+          <div className="text-container">
+            Charts down here have a custom legend and not the default one from
+            chart.js. Reason to do so is, that the legend counts to the height
+            of the charts. So the same PieChart with one big and one small
+            legend (above or below the chart) have a different size. Since one
+            legend is taking up more space than the other.
           </div>
           <div className="chart-container">
             <ChartWithCustomLegend
               chartData={chartData}
-              title={"This is the titel"}
+              title={"This is a chart with a custom legend"}
             />
           </div>
         </div>
