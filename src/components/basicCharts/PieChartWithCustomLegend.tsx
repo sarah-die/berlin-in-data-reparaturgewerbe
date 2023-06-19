@@ -8,6 +8,9 @@ import BasicLegend from "@/components/legends/BasicLegend";
 ChartJS.register(CategoryScale, autocolors);
 
 type PieChartProps = ChartProps<"pie">;
+
+/** Basic PieChart-component with custom legend that is excluded from the charts canvas. */
+
 export default function PieChartWithCustomLegend(props: {
   chartData: PieChartProps["data"];
   title?: string;

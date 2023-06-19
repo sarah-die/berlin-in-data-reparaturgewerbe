@@ -1,3 +1,4 @@
+// energy data from the given url
 // codebook: https://github.com/owid/energy-data/blob/master/owid-energy-codebook.csv
 
 const energyUrl =
@@ -59,6 +60,7 @@ export type Country = {
   data: EnergyData[];
 };
 
+/** This function fetches the energydata from ourworldindata.org and returns them. */
 // variable country to only get data from one country at a time
 // square brackets are used here to enclose the variables name
 // which is then evaluated at runtime to get the actual key name

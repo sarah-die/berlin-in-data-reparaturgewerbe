@@ -4,7 +4,9 @@ import { CategoryScale } from "chart.js";
 import autocolors from "chartjs-plugin-autocolors";
 ChartJS.register(CategoryScale, autocolors);
 
-export default function BarChart(props: { chartData: any; title: string }) {
+/** Basic pieChart component. That renders the passed chartData and the (optional) title. */
+
+export default function BarChart(props: { chartData: any; title?: string }) {
   const options: any = {
     responsive: true,
     maintainAspectRatio: false,

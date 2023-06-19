@@ -4,7 +4,9 @@ import { CategoryScale } from "chart.js";
 import autocolors from "chartjs-plugin-autocolors";
 ChartJS.register(CategoryScale, autocolors);
 
-export default function PieChart(props: { chartData; title: string }) {
+/** Basic pieChart component. That renders the passed chartData and the (optional) title. */
+
+export default function PieChart(props: { chartData; title?: string }) {
   // https://codesandbox.io/s/react-playground-forked-xzm0sx?file=/index.js
   const options: any = {
     responsive: true,
@@ -32,8 +34,11 @@ export default function PieChart(props: { chartData; title: string }) {
     },
   };
 
-  return <Pie
+  return (
+    <Pie
       data={props.chartData}
       // plugins={autocolors}
-      options={options} />;
+      options={options}
+    />
+  );
 }

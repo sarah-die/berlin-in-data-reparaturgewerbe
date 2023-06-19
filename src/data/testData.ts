@@ -1,3 +1,5 @@
+/** Test data. They are used in basic charts. */
+
 export type Userdata = {
   id: number;
   year: number;

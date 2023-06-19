@@ -1,3 +1,5 @@
+// repairshop data from the given url
+
 const url =
   "https://www.berlin.de/ba-charlottenburg-wilmersdorf/verwaltung/aemter/umwelt-und-naturschutz/umweltschutz/reparaturfuehrer/index.php/index/all.json?q=";
 
@@ -15,6 +17,7 @@ export type Shop = {
   internet: string;
 };
 
+/** This function fetches the repairshopdata from berlin.de and returns them. */
 export const getRepairshopData = async () => {
   const response = await fetch(url);
   if (!response.ok) {

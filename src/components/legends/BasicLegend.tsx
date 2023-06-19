@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+/** Basic Legend component. legendItems, legendTitle and (optional) legendSource
+ * (link to the source of the data) are passed to this function. */
+
 export default function BasicLegend(props: {
   legendItems: {
     text: string | number;

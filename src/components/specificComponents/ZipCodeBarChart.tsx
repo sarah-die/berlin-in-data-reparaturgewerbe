@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from "react";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
 import BarChart from "@/components/basicCharts/BarChart";
 
-/** This component displays a chart that shows the number of shops per zip code listet in the dataset. */
+/** This component displays a chart that shows the number of shops per zip code listed in the dataset. */
 
 type ZipCodeType = { zipCode: number; numb: number };
 

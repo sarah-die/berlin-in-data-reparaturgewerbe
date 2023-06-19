@@ -1,6 +1,8 @@
 import Layout from "../components/layout";
 import Link from "next/link";
 
+/** Main page that is displayed on the root route. */
+
 export default function Home() {
   return (
     <Layout home>

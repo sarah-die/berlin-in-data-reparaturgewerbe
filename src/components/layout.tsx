@@ -1,6 +1,9 @@
 import Head from "next/head";
 import Link from "next/link";
 
+/** Main layout component that distinguishes between homepage and other pages.
+ * It includes a header, the main outlet and an (optional) footer. */
+
 export const siteTitle = "Next.js Sample Website";
 
 export default function Layout({
@@ -38,9 +41,7 @@ export default function Layout({
       </main>
       {!home && (
         <div className="backToHome">
-          <Link href="/">
-            ← Back to home
-          </Link>
+          <Link href="/">← Back to home</Link>
         </div>
       )}
     </div>
