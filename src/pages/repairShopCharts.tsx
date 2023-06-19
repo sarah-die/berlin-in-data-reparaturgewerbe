@@ -15,7 +15,7 @@ export default function RepairShopCharts() {
       <section className="section">
         <div className="container">
           <h1 className="title">
-            Branchenverteilung von Reparaturshops in Berlin-Charlottenburg.
+            Reparaturshops in Berlin-Charlottenburg
           </h1>
           <div className="text-container">
             Die Daten, auf denen die Grafiken basieren, werden von berlin.de zur
