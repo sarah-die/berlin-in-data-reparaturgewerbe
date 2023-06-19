@@ -1,14 +1,14 @@
-import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+import {ChartProps, Pie} from "react-chartjs-2";
+import {Chart as ChartJS, ChartOptions} from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import autocolors from "chartjs-plugin-autocolors";
 ChartJS.register(CategoryScale, autocolors);
 
 /** Basic pieChart component. That renders the passed chartData and the (optional) title. */
 
-export default function PieChart(props: { chartData; title?: string }) {
+export default function PieChart(props: { chartData: ChartProps<"pie">; title?: string }) {
   // https://codesandbox.io/s/react-playground-forked-xzm0sx?file=/index.js
-  const options: any = {
+  const options: ChartOptions<"pie"> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -36,7 +36,7 @@ export default function PieChart(props: { chartData; title?: string }) {
 
   return (
     <Pie
-      data={props.chartData}
+      data={props.chartData as any}
       // plugins={autocolors}
       options={options}
     />

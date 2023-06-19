@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
 import BarChart from "@/components/basicCharts/BarChart";
+import { ChartData } from "chart.js";
 
 /** This component displays a chart that shows the number of shops per zip code listed in the dataset. */
 
@@ -43,7 +44,7 @@ export default function ZipCodeBarChart() {
     return numberOfZipcodes;
   }, [repairShopData]);
 
-  const chartData = useMemo(
+  const chartData = useMemo<ChartData<"bar">>(
     () => ({
       labels: shopsPerZipCode.map((data: ZipCodeType) => data.zipCode),
       datasets: [
@@ -61,7 +62,7 @@ export default function ZipCodeBarChart() {
   return (
     <div className="chart-container">
       <BarChart
-        chartData={chartData}
+        chartData={chartData as any}
         title={"Shops pro eingetragener Postleitzahl"}
       />
     </div>

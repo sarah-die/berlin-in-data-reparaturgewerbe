@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
 import PieChartWithCustomLegend from "@/components/basicCharts/PieChartWithCustomLegend";
+import { ChartData } from "chart.js";
 
 /** This component renders charts that display the different sectors that offer the option to repair things. */
 
@@ -66,7 +67,7 @@ export default function SectorPieChart() {
   }, [numberOfBranchen]);
 
   // process the data the way they are needed to be displayed in the charts
-  const chartData = useMemo(
+  const chartData = useMemo<ChartData<"pie">>(
     () => ({
       labels: numberOfBranchen.map((data: BranchenType) => data.branche),
       // datasets is an array of objects where each object represents a set of data

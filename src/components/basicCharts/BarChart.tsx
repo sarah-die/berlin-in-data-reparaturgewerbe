@@ -1,13 +1,16 @@
-import { Bar } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+import { Bar, ChartProps } from "react-chartjs-2";
+import { Chart as ChartJS, ChartOptions } from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import autocolors from "chartjs-plugin-autocolors";
 ChartJS.register(CategoryScale, autocolors);
 
 /** Basic pieChart component. That renders the passed chartData and the (optional) title. */
 
-export default function BarChart(props: { chartData: any; title?: string }) {
-  const options: any = {
+export default function BarChart(props: {
+  chartData: ChartProps<"bar">;
+  title?: string;
+}) {
+  const options: ChartOptions<"bar"> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -26,5 +29,5 @@ export default function BarChart(props: { chartData: any; title?: string }) {
 
   // options={} is optional
   // true is the defautl value for maintainAspectRatio and responsive
-  return <Bar data={props.chartData} options={options} />;
+  return <Bar data={props.chartData as any} options={options} />;
 }

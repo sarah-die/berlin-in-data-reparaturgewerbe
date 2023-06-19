@@ -46,8 +46,6 @@ export default function PieChartWithCustomLegend(props: {
     setLegendItems(refLegendItems);
   }, [props.chartData, pieRef.current]);
 
-  console.log(legendItems);
-
   return (
     <>
       <BasicLegend legendItems={legendItems} legendTitle={props.legendTitle} />
