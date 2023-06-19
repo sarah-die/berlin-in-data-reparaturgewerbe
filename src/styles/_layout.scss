@@ -3,10 +3,9 @@
 @use "./src/styles/global-vars" as var;
 
 .layout {
+  width: 100%;
+
   .mainLayoutContainer {
-    overflow-x: hidden;
-    overflow-y: auto;
-    min-height: 100vh;
     width: 100%;
   }
 
@@ -14,4 +13,3 @@
     padding: 1rem;
   }
 }
-

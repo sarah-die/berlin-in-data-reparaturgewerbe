@@ -1,11 +1,9 @@
 import { ChartProps, Pie } from "react-chartjs-2";
-import {
-  Chart as ChartJS,
-  ChartOptions,
-} from "chart.js/auto";
+import { Chart as ChartJS, ChartOptions } from "chart.js/auto";
 import { CategoryScale } from "chart.js";
 import autocolors from "chartjs-plugin-autocolors";
 import { useEffect, useRef, useState } from "react";
+import BasicLegend from "@/components/legends/BasicLegend";
 
 ChartJS.register(CategoryScale, autocolors);
 
@@ -14,7 +12,7 @@ export default function ChartWithCustomLegend(props: {
   chartData: PieChartProps["data"];
   title: string;
 }) {
-  const pieRef = useRef();
+  const pieRef = useRef(null);
   const [legendItems, setLegendItems] = useState<
     {
       text: string | number;
@@ -50,12 +48,15 @@ export default function ChartWithCustomLegend(props: {
 
   return (
     <>
-      <Pie
-        data={props.chartData as any}
-        // plugins={autocolors}
-        options={options}
-        ref={pieRef}
-      />
+      <div className="chart-container">
+        <Pie
+          data={props.chartData as any}
+          // plugins={autocolors}
+          options={options}
+          ref={pieRef}
+        />
+      </div>
+      <BasicLegend legendItems={legendItems} />
     </>
   );
 }

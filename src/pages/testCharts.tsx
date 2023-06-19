@@ -69,12 +69,10 @@ export default function TestCharts() {
             legend (above or below the chart) have a different size. Since one
             legend is taking up more space than the other.
           </div>
-          <div className="chart-container">
             <ChartWithCustomLegend
               chartData={chartData}
               title={"This is a chart with a custom legend"}
             />
-          </div>
         </div>
       </section>
     </Layout>
