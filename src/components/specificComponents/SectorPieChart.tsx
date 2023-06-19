@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
-import PieChart from "@/components/basicCharts/PieChart";
+import PieChartWithCustomLegend from "@/components/basicCharts/PieChartWithCustomLegend";
 
 /** This component renders charts that display the different sectors that offer the option to repair things. */
 
@@ -84,11 +84,15 @@ export default function SectorPieChart() {
     [numberOfBranchen]
   );
   return (
-    <div className="chart-container">
-      <PieChart
-        chartData={chartData}
-        title={"Reparaturgewerbe nach Branchen"}
-      />
-    </div>
+    <PieChartWithCustomLegend
+      chartData={chartData}
+      legendTitle={"Reparaturgewerbe nach Branchen"}
+    />
+    // <div className="chart-container">
+    //   <PieChart
+    //     chartData={chartData}
+    //     title={"Reparaturgewerbe nach Branchen"}
+    //   />
+    // </div>
   );
 }

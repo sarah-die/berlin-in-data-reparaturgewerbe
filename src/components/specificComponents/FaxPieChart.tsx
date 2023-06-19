@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { getRepairshopData, Shop } from "@/data/repairShopData";
-import PieChart from "@/components/basicCharts/PieChart";
 import { ChartData } from "chart.js";
+import PieChartWithCustomLegend from "@/components/basicCharts/PieChartWithCustomLegend";
 
 /** This component renders a chart that display the amount of shops that are available via fax. */
 
@@ -59,11 +59,9 @@ export default function FaxPieChart() {
   );
 
   return (
-    <div className="chart-container">
-      <PieChart
-        chartData={chartData}
-        title={"Anzahl der Shops mit Faxgeräten"}
-      />
-    </div>
+    <PieChartWithCustomLegend
+      chartData={chartData}
+      legendTitle={"Anzahl der Shops mit Faxgeräten"}
+    />
   );
 }

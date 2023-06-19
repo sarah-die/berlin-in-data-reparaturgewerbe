@@ -10,7 +10,8 @@ ChartJS.register(CategoryScale, autocolors);
 type PieChartProps = ChartProps<"pie">;
 export default function PieChartWithCustomLegend(props: {
   chartData: PieChartProps["data"];
-  title: string;
+  title?: string;
+  legendTitle: string;
 }) {
   const pieRef = useRef(null);
   const [legendItems, setLegendItems] = useState<
@@ -48,6 +49,7 @@ export default function PieChartWithCustomLegend(props: {
 
   return (
     <>
+      <BasicLegend legendItems={legendItems} legendTitle={props.legendTitle} />
       <div className="chart-container">
         <Pie
           data={props.chartData as any}
@@ -56,7 +58,6 @@ export default function PieChartWithCustomLegend(props: {
           ref={pieRef}
         />
       </div>
-      <BasicLegend legendItems={legendItems} legendTitle={"Some test title"} />
     </>
   );
 }

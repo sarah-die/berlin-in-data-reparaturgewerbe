@@ -5,7 +5,7 @@ import { useMemo } from "react";
 import { Userdata, UserData } from "@/data/testData";
 import LineChart from "../components/basicCharts/LineChart";
 import PieChart from "../components/basicCharts/PieChart";
-import ChartWithCustomLegend from "@/components/basicCharts/ChartWithCustomLegend";
+import PieChartWithCustomLegend from "@/components/basicCharts/PieChartWithCustomLegend";
 import { ChartData } from "chart.js";
 
 /** Test component that visualizes different types of charts. The dataset is just mock-data. */
@@ -69,10 +69,16 @@ export default function TestCharts() {
             legend (above or below the chart) have a different size. Since one
             legend is taking up more space than the other.
           </div>
-            <ChartWithCustomLegend
-              chartData={chartData}
-              title={"This is a chart with a custom legend"}
-            />
+          <PieChartWithCustomLegend
+            chartData={chartData}
+            title={"This is a chart with a custom legend"}
+            legendTitle={"The title from the legend"}
+          />
+          <PieChartWithCustomLegend
+            chartData={chartData}
+            title={"This is a chart with a custom legend"}
+            legendTitle={"The title from the legend"}
+          />
         </div>
       </section>
     </Layout>
