@@ -33,6 +33,14 @@ main {
   margin: auto;
   height: 50vh;
   width: 80vw;
+  @include tablet {
+    height: 40vh;
+    width: 80vw;
+  }
+  @include mobile {
+    height: 30vh;
+    width: 80vw;
+  }
   max-width: 1000px;
 }
 
