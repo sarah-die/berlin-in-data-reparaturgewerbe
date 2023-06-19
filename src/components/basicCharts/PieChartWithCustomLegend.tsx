@@ -8,7 +8,7 @@ import BasicLegend from "@/components/legends/BasicLegend";
 ChartJS.register(CategoryScale, autocolors);
 
 type PieChartProps = ChartProps<"pie">;
-export default function ChartWithCustomLegend(props: {
+export default function PieChartWithCustomLegend(props: {
   chartData: PieChartProps["data"];
   title: string;
 }) {
