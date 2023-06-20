@@ -12,7 +12,7 @@ export default function EnergyCharts() {
       <section className="section">
         <div className="container">
           <h1 className="title">Explore Data on Energy</h1>
-          <div className="text-container">
+          <div>
             The following graphs are based on energy data provided by
             ourworldindata.org. The goal is to recreate the graph shown here (
             <Link

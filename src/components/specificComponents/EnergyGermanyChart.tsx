@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { Country, getEnergyData } from "@/data/energyData";
 import LineChart from "@/components/basicCharts/LineChart";
+import { ChartData } from "chart.js";
 
 type PrimaryConPerYear = { year: number; primaryCon: number };
 
@@ -27,10 +28,12 @@ export default function EnergyGermanyChart() {
   // im Datensatz: primary_energy_consumption
 
   const primaryEnergyConsumption: PrimaryConPerYear[] = useMemo(() => {
-    return energyDataGermany.data.map((d) => ({
-      year: d.year,
-      primaryCon: d.primary_energy_consumption,
-    }));
+    return energyDataGermany.data
+      .map((d) => ({
+        year: d.year,
+        primaryCon: d.primary_energy_consumption,
+      }))
+      .filter((d) => d.primaryCon !== undefined) as PrimaryConPerYear[];
   }, [energyDataGermany]);
 
   const chartData = useMemo(
@@ -38,15 +41,15 @@ export default function EnergyGermanyChart() {
       labels: primaryEnergyConsumption.map((data) => data.year),
       datasets: [
         {
-          labels: "Primary Energy Consumption",
+          label: "Primary Energy Consumption",
           data: primaryEnergyConsumption.map((data) => data.primaryCon),
           borderColor: "black",
           borderWidth: 0.5,
         },
       ],
-    }),
+    }) as ChartData<"line">,
     [primaryEnergyConsumption]
   );
 
-  return <LineChart chartData={chartData as any}></LineChart>;
+  return <LineChart chartData={chartData}></LineChart>;
 }

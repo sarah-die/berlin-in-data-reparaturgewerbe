@@ -5,7 +5,9 @@ ChartJS.register(CategoryScale);
 
 /** Basic pieChart component. That renders the passed chartData. */
 
-export default function LineChart(props: { chartData: ChartProps<"line"> }) {
+export default function LineChart(props: {
+  chartData: ChartProps<"line">["data"];
+}) {
   // options={} is optional
   return (
     <div className="chart-container">
