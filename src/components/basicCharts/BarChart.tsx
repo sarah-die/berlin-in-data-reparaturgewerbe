@@ -29,5 +29,9 @@ export default function BarChart(props: {
 
   // options={} is optional
   // true is the defautl value for maintainAspectRatio and responsive
-  return <Bar data={props.chartData as any} options={options} />;
+  return (
+    <div className="chart-container">
+      <Bar data={props.chartData as any} options={options} />
+    </div>
+  );
 }

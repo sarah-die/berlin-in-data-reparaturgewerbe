@@ -53,15 +53,9 @@ export default function TestCharts() {
             necessary. "MaintainAspectRatio: false" to not automatically
             calculate the height of charts.
           </div>
-          <div className="chart-container">
-            <BarChart chartData={chartData} title={"basic bar chart"} />
-          </div>
-          <div className="chart-container">
-            <LineChart chartData={chartData} />
-          </div>
-          <div className="chart-container">
-            <PieChart chartData={chartData} title={"basic pie chart"} />
-          </div>
+          <BarChart chartData={chartData} title={"basic bar chart"} />
+          <LineChart chartData={chartData} />
+          <PieChart chartData={chartData} title={"basic pie chart"} />
           <div className="text-container">
             Charts down here have a custom legend and not the default one from
             chart.js. Reason to do so is, that the legend counts to the height
