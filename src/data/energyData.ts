@@ -44,6 +44,7 @@ export type EnergyData = {
   other_renewables_share_elec: number;
   other_renewables_share_elec_exc_biofuel: number;
   per_capita_electricity: number;
+  primary_energy_consumption: number;
   renewables_elec_per_capita: number;
   renewables_electricity: number;
   renewables_share_elec: number;

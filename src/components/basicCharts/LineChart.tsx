@@ -8,6 +8,7 @@ ChartJS.register(CategoryScale);
 export default function LineChart(props: { chartData: ChartProps<"line"> }) {
   // options={} is optional
   return (
+
     <Line
       data={props.chartData as any}
       options={{ maintainAspectRatio: false }}
