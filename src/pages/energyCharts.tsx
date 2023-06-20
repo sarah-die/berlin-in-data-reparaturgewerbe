@@ -23,7 +23,7 @@ export default function EnergyCharts() {
             </Link>
             ) step by step.
           </div>
-          {/*<EnergyGermanyChart />*/}
+          <EnergyGermanyChart />
         </div>
       </section>
     </Layout>
