@@ -27,6 +27,11 @@ export default function Home() {
                 View some charts about repair shops in Berlin
               </Link>
             </h2>
+            <h2>
+              <Link href="/energyCharts">
+                View charts about energy-data here
+              </Link>
+            </h2>
           </div>
         </section>
       </main>
